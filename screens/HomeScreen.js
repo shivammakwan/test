@@ -7,58 +7,245 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
+  Button
 } from "react-native";
 import { MonoText } from "../components/StyledText";
 import { Card, Header } from "react-native-elements";
+import TabBarIcon from "../components/TabBarIcon";
+import { DrawerActions } from "react-navigation";
+
+function MenuButton() {
+  return (
+    <View>
+      <TabBarIcon
+        name={"md-menu"}
+        onPress={() =>
+          this.props.navigation.dispatch(DrawerActions.toggleDrawer())
+        }
+      />
+    </View>
+  );
+}
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Header
-        leftComponent={{ icon: "menu", color: "#fff" }}
-        centerComponent={{ text: "MY TITLE", style: { color: "#fff" } }}
-        rightComponent={{ icon: "home", color: "#fff" }}
+        centerComponent={{
+          text: "NBA test App",
+          style: { color: "#fff", fontWeight: "bold", fontSize: 20 }
+        }}
       />
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
         <View style={styles.getStartedContainer}>
-          <Text style={styles.getStartedText}>test test test</Text>
-
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
           >
-            <MonoText>NBA</MonoText>
+            <MonoText>NBA Test App</MonoText>
           </View>
         </View>
 
         <View>
           <ScrollView horizontal={true}>
             <Card>
-              <Image source={require("../assets/images/logo.png")} />
-              <Text style={{ marginBottom: 10 }}>test test</Text>
+              <Text
+                style={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontSize: 20,
+                  marginBottom: 10
+                }}
+              >
+                this is a test card
+              </Text>
+              <View style={{ flexDirection: "row" }}>
+                <Image
+                  style={{ flex: 1 }}
+                  source={require("../assets/images/bull.png")}
+                />
+                <Text
+                  style={{
+                    flex: 1,
+                    textAlignVertical: "center",
+                    fontWeight: "bold"
+                  }}
+                >
+                  Vs.
+                </Text>
+                <Image
+                  style={{ flex: 1 }}
+                  source={require("../assets/images/hornet.png")}
+                />
+              </View>
+              <View
+                style={{
+                  marginTop: 10,
+                  borderTopColor: "#eff0f1",
+                  borderTopWidth: 1
+                }}
+              ></View>
+              <Text
+                style={{
+                  paddingTop: 10,
+                  marginBottom: 5,
+                  textAlign: "center",
+                  fontSize: 25
+                }}
+              >
+                watch | score
+              </Text>
             </Card>
             <Card>
-              <Image source={require("../assets/images/logo.png")} />
+              <Text
+                style={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontSize: 20,
+                  marginBottom: 10
+                }}
+              >
+                this is a test card
+              </Text>
+              <View style={{ flexDirection: "row" }}>
+                <Image
+                  style={{ flex: 1 }}
+                  source={require("../assets/images/bull.png")}
+                />
+                <Text
+                  style={{
+                    flex: 1,
+                    textAlignVertical: "center",
+                    fontWeight: "bold"
+                  }}
+                >
+                  Vs.
+                </Text>
+                <Image
+                  style={{ flex: 1 }}
+                  source={require("../assets/images/hornet.png")}
+                />
+              </View>
+              <View
+                style={{
+                  marginTop: 10,
+                  borderTopColor: "#eff0f1",
+                  borderTopWidth: 1
+                }}
+              ></View>
+              <Text
+                style={{
+                  paddingTop: 10,
+                  marginBottom: 5,
+                  textAlign: "center",
+                  fontSize: 25
+                }}
+              >
+                watch | score
+              </Text>
             </Card>
             <Card>
-              <Image source={require("../assets/images/logo.png")} />
+              <Text
+                style={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontSize: 20,
+                  marginBottom: 10
+                }}
+              >
+                this is a test card
+              </Text>
+              <View style={{ flexDirection: "row" }}>
+                <Image
+                  style={{ flex: 1 }}
+                  source={require("../assets/images/bull.png")}
+                />
+                <Text
+                  style={{
+                    flex: 1,
+                    textAlignVertical: "center",
+                    fontWeight: "bold"
+                  }}
+                >
+                  Vs.
+                </Text>
+                <Image
+                  style={{ flex: 1 }}
+                  source={require("../assets/images/hornet.png")}
+                />
+              </View>
+              <View
+                style={{
+                  marginTop: 10,
+                  borderTopColor: "#eff0f1",
+                  borderTopWidth: 1
+                }}
+              ></View>
+              <Text
+                style={{
+                  paddingTop: 10,
+                  marginBottom: 5,
+                  textAlign: "center",
+                  fontSize: 25
+                }}
+              >
+                watch | score
+              </Text>
             </Card>
           </ScrollView>
         </View>
-      </ScrollView>
 
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>NBA NBA NBA</Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}
-        >
-          <MonoText style={styles.codeHighlightText}>test test test</MonoText>
+        <View style={styles.container}>
+          <Card style={styles.cardItem}>
+            <Text style={{ fontSize: 25, alignSelf: "center", margin: 10 }}>
+              <Image
+                style={{ margin: 10, height: 50, width: 50 }}
+                source={require("../assets/images/logo.png")}
+              />
+            </Text>
+            <Text style={{ fontSize: 25, alignSelf: "center" }}>X</Text>
+            <Text style={{ fontSize: 25, alignSelf: "center", margin: 10 }}>
+              <Image
+                style={{ margin: 10, height: 50, width: 50 }}
+                source={require("../assets/images/logo.png")}
+              />
+            </Text>
+          </Card>
+          <Card style={styles.cardItem}>
+            <Text style={{ fontSize: 25, alignSelf: "center", margin: 10 }}>
+              <Image
+                style={{ margin: 10, height: 50, width: 50 }}
+                source={require("../assets/images/logo.png")}
+              />
+            </Text>
+            <Text style={{ fontSize: 25, alignSelf: "center" }}>Vs.</Text>
+            <Text style={{ fontSize: 25, alignSelf: "center", margin: 10 }}>
+              <Image
+                style={{ margin: 10, height: 50, width: 50 }}
+                source={require("../assets/images/logo.png")}
+              />
+            </Text>
+          </Card>
+          <Card style={styles.cardItem}>
+            <Text style={{ fontSize: 25, alignSelf: "center", margin: 10 }}>
+              <Image
+                style={{ margin: 10, height: 50, width: 50 }}
+                source={require("../assets/images/logo.png")}
+              />
+            </Text>
+            <Text style={{ fontSize: 25, alignSelf: "center" }}>X</Text>
+            <Text style={{ fontSize: 25, alignSelf: "center", margin: 10 }}>
+              <Image
+                style={{ margin: 10, height: 50, width: 50 }}
+                source={require("../assets/images/logo.png")}
+              />
+            </Text>
+          </Card>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -153,5 +340,17 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: "#2e78b7"
+  },
+  scrollItem: {
+    margin: 10
+  },
+  cardItem: {
+    flex: 1,
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: "#000000",
+    margin: 15,
+    height: 250,
+    width: 300
   }
 });
